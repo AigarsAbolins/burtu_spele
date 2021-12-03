@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burtu spēle</title>
+</head>
+<body>
+
+
+    <div class="sajaukts">Šeit būs sujaukti vārdi</div>
+    <input class="atbilde" />
+    <button onclick="parbaudit()"> Pārbaudīt atbildi</button>
+
+    <script>
+    let vardi_1 = ['koks', 'kods', 'kode','sals', 'pols','paka']//Masīvs//
+    let vardi_1_s = ['kods', 'koks', 'sals','kode', 'paka','pols']//Masīvs//
+
+    
+    let randomNr = Math.random() * 10
+    randomNr = Math.ceil( randomNr )
+    randomNr = randomNr-1
+    document.querySelector(".sajaukts").innerHtml=vardi_1_s[randomNr]+' , '+randomNr
+    
+    function parbaudit()
+    {
+        let atbilde = document.querySelector('.atbilde').value
+        if( atbilde == vardi_1[randomNr])
+        {
+            alert('Pareizi')
+        }//Beidzas if
+
+    }//beidzes parbaudit//
+    </script>
+    
+</body>
+</html>
