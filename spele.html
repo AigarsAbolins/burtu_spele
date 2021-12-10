@@ -38,14 +38,19 @@
         console.log('sajaukšanai='+vards)
 
         let vardaGarums = vards.length
-
         let loopIndex = 0
+        let sajauktsVards = []
 
         while(loopIndex != vardaGarums )
         {
-            console.log(loopIndex)
+            console.log(vards[loopIndex])
+            
+            let randomIndex = Math.floor( Math.random() * vardaGarums )
+            
+            sajauktsVards.push(vards[loopIndex])//sajauktā varda masīvā ielieku vienu burtu.push darbojas tikai uz masīviem//
             loopIndex++ //Pluplus nozīmē, ka tiek pieskaitīts plus viens//
         }
+        console.log(sajauktsVards)
     }//beidzas sajaukt vardu()//
     </script>
     
