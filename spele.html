@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <div class="sajaukts">Šeit būs sujaukti vārdi</div>
+    <div class="sajaukts">Šeit būs sajaukti vārdi</div>
     <input class="atbilde" />
     <button onclick="parbaudit()"> Pārbaudīt atbildi</button>
 
@@ -37,17 +37,23 @@
         console.log('sajauktVardu() palaists')
         console.log('sajaukšanai='+vards)
 
+        let vardsIzjauksanai = vards.split('')
+
         let vardaGarums = vards.length
-        let loopIndex = 0
+        let loopIndex = 0 // vajadzēs iet ciklā//
         let sajauktsVards = []
 
         while(loopIndex != vardaGarums )
         {
             console.log(vards[loopIndex])
             
-            let randomIndex = Math.floor( Math.random() * vardaGarums )
+            let randomIndex = Math.floor( Math.random() * vardsIzjauksanai.length )
             
-            sajauktsVards.push(vards[loopIndex])//sajauktā varda masīvā ielieku vienu burtu.push darbojas tikai uz masīviem//
+            sajauktsVards.push(vardsIzjauksanai[randomIndex])//sajauktā varda masīvā ielieku vienu burtu.push darbojas tikai uz masīviem//
+            vardsIzjauksanai.splice(randomIndex, 1)
+
+            //console.log(vardsIzjauksanai)
+
             loopIndex++ //Pluplus nozīmē, ka tiek pieskaitīts plus viens//
         }
         console.log(sajauktsVards)
