@@ -20,7 +20,7 @@
     let randomNr = Math.random() * 10
     randomNr = Math.ceil( randomNr )
     randomNr = randomNr-1
-    document.querySelector(".sajaukts").innerHtml=vardi_1_s[randomNr]+' , '+randomNr
+    document.querySelector(".sajaukts").innerHtml=sajauktVardu(vardi_1[randomNr]) +' , '+randomNr
     
     function parbaudit()
     {
@@ -57,6 +57,8 @@
             loopIndex++ //Pluplus nozīmē, ka tiek pieskaitīts plus viens//
         }
         console.log(sajauktsVards)
+        sajauktsVards = sajauktsVards.join('')//Masīvu padara par stringu//
+        return sajauktVards //Šī funkcija atgriezīs kautkādu vērtību//
     }//beidzas sajaukt vardu()//
     </script>
     
