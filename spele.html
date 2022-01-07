@@ -17,20 +17,28 @@
     let vardi_1_s = ['kods', 'koks', 'sals','kode', 'paka','pols', 'laka', 'taka']//Masīvs//
 
     
-    let randomNr = Math.random() * 10
-    randomNr = Math.ceil( randomNr )
-    randomNr = randomNr-1
-    document.querySelector(".sajaukts").innerHtml=sajauktVardu(vardi_1[randomNr]) +' , '+randomNr
+    let randomNr
+    
+    function izveletiesVardu()
+    {
+        randomNr = Math.random() * 10
+        randomNr = Math.ceil( randomNr )//Noapaļošana//
+        randomNr = randomNr-1
+        
+        document.querySelector(".sajaukts").innerHtml=sajauktVardu(vardi_1[randomNr]) +' , '+randomNr
+    }
+    
+    izveletiesVardu()
     
     function parbaudit()
     {
         let atbilde = document.querySelector('.atbilde').value
         if( atbilde == vardi_1[randomNr])
         {
-            alert('Pareizi')
+            alert('Pareizi! ')
         }//Beidzas if//
 
-    }//beidzes parbaudit//
+    }//beidzas parbaudit()//
 
     function sajauktVardu(vards)//saņem mainīgo vards//
     {
@@ -45,7 +53,7 @@
 
         while(loopIndex != vardaGarums )
         {
-            console.log(vards[loopIndex])
+            //console.log(vards[loopIndex])
             
             let randomIndex = Math.floor( Math.random() * vardsIzjauksanai.length )
             
