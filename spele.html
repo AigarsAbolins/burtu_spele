@@ -26,6 +26,7 @@
         randomNr = randomNr-1
         
         document.querySelector(".sajaukts").innerHtml=sajauktVardu(vardi_1[randomNr]) +' , '+randomNr
+        document.querySelector(' .atbilde').value = ''
     }
     
     izveletiesVardu()
@@ -35,8 +36,13 @@
         let atbilde = document.querySelector('.atbilde').value
         if( atbilde == vardi_1[randomNr])
         {
-            alert('Pareizi! ')
-        }//Beidzas if//
+            alert('Pareizi! ')//alert aptur visu, kamēr lietotājs kautko izdarīs//
+            izveletiesVardu()
+        }
+        else
+        {
+            alert('Nepareizi!')
+        }   //Beidzas if//
 
     }//beidzas parbaudit()//
 
